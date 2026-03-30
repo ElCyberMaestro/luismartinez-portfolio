@@ -1,44 +1,36 @@
-# Luis Martinez Portfolio Website
+# Luis Martinez - Cybersecurity Portfolio
 
-A personalized cybersecurity portfolio website based on the 0xElshazly template.
+Professional cybersecurity portfolio website showcasing experience in OT/SCADA security, SIEM, vulnerability management, and network defense.
 
-## Quick Setup
+## Live Site
 
-1. **Get the full template assets:**
-   - Go to: https://github.com/0xElshazly/0xElshazly
-   - Click "Code" → "Download ZIP"
-   - Extract the ZIP file
+Visit: https://elcybermaestro.github.io/luismartinez-portfolio/
 
-2. **Copy the index.html:**
-   - Replace the downloaded `index.html` with the one in this folder
+## About
 
-3. **Replace the profile image:**
-   - Add your photo to: `assets/img/profile-img.jpg`
+This portfolio features:
+- About section with professional summary
+- Technical Skills (Firewall/IPS, Security Platforms, Infrastructure, Automation)
+- Work Experience (2011-2025)
+- Contact form (via Formspree)
 
-4. **Customize social links:**
-   - Edit `index.html` and update the GitHub URL (currently placeholder)
+## Contact
 
-5. **Deploy to GitHub Pages:**
-   - Create a new repository (e.g., `luismartinez-portfolio`)
-   - Push these files
-   - Enable GitHub Pages in Settings → Pages
+- Email: lmartinezcysec@gmail.com
+- Phone: (940) 260-6045
+- LinkedIn: linkedin.com/in/luismartineztx
+- GitHub: github.com/ElCyberMaestro
 
 ## Customization
 
-- **Update LinkedIn:** Find `linkedin.com/in/luismartineztx` in index.html and replace with your profile
-- **Add GitHub:** Update the GitHub link in the social-links section
-- **Profile photo:** Replace `assets/img/profile-img.jpg` with your photo
+To customize this portfolio:
+- Edit `index.html` to update content
+- Replace `assets/img/profile-img.jpg` with your photo
+- Update social links in the HTML
 
-## Features Included
+## Tech Stack
 
-- Dark/Light mode toggle
-- Responsive design (mobile-friendly)
-- About section with contact info
-- Technical Skills section
-- Experience timeline
-- Contact form (requires backend for actual submission)
-- Smooth animations
-
-## Note
-
-The JavaScript libraries and CSS are NOT included in this folder. You MUST download them from the original template at https://github.com/0xElshazly/0xElshazly to have a fully functional site.
+- HTML5, CSS3, JavaScript
+- Bootstrap-based template
+- Formspree for contact form
+- GitHub Pages for hosting

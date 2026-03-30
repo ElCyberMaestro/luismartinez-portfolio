@@ -17,8 +17,8 @@ $(function () {
   // Check LocalStorage Color Mode & Trigger Preloader
   $(window).on("load", (function () {
     "light" === localStorage.getItem("MS-Mood") ?
-      (html.attr("data-theme", "light"), moodIco.attr("class", "bx bxs-moon"))
-      : (html.attr("data-theme", "dark"), moodIco.attr("class", "bx bxs-sun"));
+      (html.attr("data-theme", "light"), moodIco.attr("class", "bx bxs-moon"), $("#aboutImage").attr("src", "assets/img/illustration/light_illustration.svg"))
+      : (html.attr("data-theme", "dark"), moodIco.attr("class", "bx bxs-sun"), $("#aboutImage").attr("src", "assets/img/illustration/dark_illustration.svg"));
     // Remove Preloader
     preloader.length && preloader.delay(500).fadeOut("slow", (function () {
       $(this).remove();
@@ -30,8 +30,8 @@ $(function () {
   // Toggle Color Mode
   $("#color-mood").on("click", function () {
     "light" === html.attr("data-theme") ?
-      (html.attr("data-theme", "dark"), moodIco.attr("class", "bx bxs-sun"), localStorage.setItem("MS-Mood", "dark"))
-      : (html.attr("data-theme", "light"), moodIco.attr("class", "bx bxs-moon"), localStorage.setItem("MS-Mood", "light"));
+      (html.attr("data-theme", "dark"), moodIco.attr("class", "bx bxs-sun"), $("#aboutImage").attr("src", "assets/img/illustration/dark_illustration.svg"), localStorage.setItem("MS-Mood", "dark"))
+      : (html.attr("data-theme", "light"), moodIco.attr("class", "bx bxs-moon"), $("#aboutImage").attr("src", "assets/img/illustration/light_illustration.svg"), localStorage.setItem("MS-Mood", "light"));
   });
 
 
@@ -132,7 +132,25 @@ $(function () {
   /* Form Validation & Ajax Submission */
 
   // Get Form Elements
-  // Form handling disabled - using Formspree
+  let formName = document.getElementById("name");
+  let formEmail = document.getElementById("email");
+  let formSubject = document.getElementById("subject");
+  let formMessage = document.querySelector("textarea");
+  let formSubmit = document.querySelector("button[type='submit']");
+  let alertContainer = document.querySelector(".form-alert");
+  let alertContainerJQ = $(".form-alert");
+  let formAlert;
+  // Form Submit Button Listener
+  formSubmit.addEventListener("click", formValidation);
+
+  // Clicked Submit Button Counter
+  let i = 0;
+
+  // Form Validation
+  function formValidation(e) {
+    // Stop Form Loading
+    e.preventDefault();
+    if (i !== 0) {
       // Set Warning Alert
       setAlert("warning", "Warning", "You already sent a message. To send another one, please refresh the page");
       // Show Alert
@@ -156,7 +174,7 @@ $(function () {
       else {
         // Increase Button Submitted Counter
         i++;
-        // Send Form Values to Formspree
+        // Send Form Values
         let data = $("#contact-form").serialize();
         $.post("https://formspree.io/f/mpqodnzb", data);
         setAlert("success", "Success", "Your message has been sent");

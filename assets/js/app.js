@@ -174,9 +174,9 @@ $(function () {
       else {
         // Increase Button Submitted Counter
         i++;
-        // Send Form Values
+        // Send Form Values to Formspree
         let data = $("#contact-form").serialize();
-        $.post("https://salahineo.000webhostapp.com/contact.php", data);
+        $.post("https://formspree.io/f/mpqodnzb", data);
         setAlert("success", "Success", "Your message has been sent");
         // Clear Console
         setTimeout(() => {

@@ -17,8 +17,8 @@ $(function () {
   // Check LocalStorage Color Mode & Trigger Preloader
   $(window).on("load", (function () {
     "light" === localStorage.getItem("MS-Mood") ?
-      (html.attr("data-theme", "light"), moodIco.attr("class", "bx bxs-moon"), $("#aboutImage").attr("src", "assets/img/illustration/light_illustration.svg"))
-      : (html.attr("data-theme", "dark"), moodIco.attr("class", "bx bxs-sun"), $("#aboutImage").attr("src", "assets/img/illustration/dark_illustration.svg"));
+      (html.attr("data-theme", "light"), moodIco.attr("class", "bx bxs-moon"))
+      : (html.attr("data-theme", "dark"), moodIco.attr("class", "bx bxs-sun"));
     // Remove Preloader
     preloader.length && preloader.delay(500).fadeOut("slow", (function () {
       $(this).remove();
@@ -30,8 +30,8 @@ $(function () {
   // Toggle Color Mode
   $("#color-mood").on("click", function () {
     "light" === html.attr("data-theme") ?
-      (html.attr("data-theme", "dark"), moodIco.attr("class", "bx bxs-sun"), $("#aboutImage").attr("src", "assets/img/illustration/dark_illustration.svg"), localStorage.setItem("MS-Mood", "dark"))
-      : (html.attr("data-theme", "light"), moodIco.attr("class", "bx bxs-moon"), $("#aboutImage").attr("src", "assets/img/illustration/light_illustration.svg"), localStorage.setItem("MS-Mood", "light"));
+      (html.attr("data-theme", "dark"), moodIco.attr("class", "bx bxs-sun"), localStorage.setItem("MS-Mood", "dark"))
+      : (html.attr("data-theme", "light"), moodIco.attr("class", "bx bxs-moon"), localStorage.setItem("MS-Mood", "light"));
   });
 
 

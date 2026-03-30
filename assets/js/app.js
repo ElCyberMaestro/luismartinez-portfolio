@@ -132,25 +132,7 @@ $(function () {
   /* Form Validation & Ajax Submission */
 
   // Get Form Elements
-  let formName = document.getElementById("name");
-  let formEmail = document.getElementById("email");
-  let formSubject = document.getElementById("subject");
-  let formMessage = document.querySelector("textarea");
-  let formSubmit = document.querySelector("button[type='submit']");
-  let alertContainer = document.querySelector(".form-alert");
-  let alertContainerJQ = $(".form-alert");
-  let formAlert;
-  // Form Submit Button Listener
-  formSubmit.addEventListener("click", formValidation);
-
-  // Clicked Submit Button Counter
-  let i = 0;
-
-  // Form Validation
-  function formValidation(e) {
-    // Stop Form Loading
-    e.preventDefault();
-    if (i !== 0) {
+  // Form handling disabled - using Formspree
       // Set Warning Alert
       setAlert("warning", "Warning", "You already sent a message. To send another one, please refresh the page");
       // Show Alert
